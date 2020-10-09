@@ -29,7 +29,7 @@ export async function updateLiveUsers(ctx: EventContext<Clients>) {
             count: liveUsers,
             slug,
           },
-          id: savedProduct?.id,,
+          id: savedProduct?.id,
           schema: 'v1'
         })
       } catch (e){

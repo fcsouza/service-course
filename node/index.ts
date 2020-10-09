@@ -9,6 +9,7 @@ import {
 import { Clients } from './clients'
 import { analytics } from './handlers/analytics'
 import { updateLiveUsers } from './event/liveUsersUpdate'
+import { productList } from './resolvers/product'
 
 const THREE_SECONDS_MS = 3 * 1000
 const CONCURRENCY = 10
@@ -53,5 +54,12 @@ export default new Service<Clients, State, ParamsContext>({
   },
   events: {
     liveUsersUpdate: updateLiveUsers,
+  },
+  graphql: {
+    resolvers: {
+        Query: {
+            productList,
+        },
+    },
   },
 })
